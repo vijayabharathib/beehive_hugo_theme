@@ -1,0 +1,21 @@
+<article class="post-preview">
+  <a href="{{ .Permalink }}">
+    <h2 class="post-title">{{ .Title }}</h2>
+  </a>
+  {{ if .Params.subtitle }}
+    <h3 class="post-subtitle">
+    {{- .Params.subtitle -}}
+    </h3>
+  {{ end }}
+  <ul>
+    <li> By {{ .Params.author }}</li>
+    <li> {{ .PublishDate.Format "January 2, 2006" }} </li>
+    <li> {{ .ReadingTime }} minute read ({{ .FuzzyWordCount}} words) </li>
+    <li><ul>
+      {{ range .Params.tags }}
+      <li><a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a></li>
+        </span>
+      {{ end }}
+    </ul></li>
+  </ul>
+</article>
