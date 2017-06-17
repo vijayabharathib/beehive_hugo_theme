@@ -1,8 +1,8 @@
 +++
 author = "michaelhenderson"
 date = "2017-06-16T22:16:06+05:30"
-publishdate = ""
-subtitle = ""
+publishdate = "2017-06-16T22:02:51+05:30"
+subtitle = "Sample content for new themes"
 tags = [
     "go",
     "golang",
