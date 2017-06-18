@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h2>single author template</h2>
   <h1>{{ print .Params.firstname " " .Params.lastname }}</h1>
-  <img src={{ .Params.image }} alt={{ .Params.firstname }} />
+  <img src="{{ .Params.image }}" alt={{ .Params.firstname }} />
 
   {{ .Content }}
   <ul>
