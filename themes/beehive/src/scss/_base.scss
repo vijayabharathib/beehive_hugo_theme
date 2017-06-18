@@ -43,8 +43,8 @@ a {
   }
   &:hover{
     &, h1,h2,h3,h4,h5,h6 & {
-      border-bottom: 1px solid $color-orange-light;
-      color: $color-orange-light;
+      //border-bottom: 1px solid $color-yellow-light;
+      color: $color-brand;
     }
   }
 }
@@ -64,5 +64,5 @@ ul {
 body {
   margin: 0;
   border: 0;
-  border-top: 10px solid #c04;
+  border-top: 10px solid $color-brand;
 }

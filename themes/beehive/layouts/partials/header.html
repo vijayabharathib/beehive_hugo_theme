@@ -1,70 +1,33 @@
-{{ if .IsHome }}
-  {{ $.Scratch.Set "title" .Site.Title }}
-  {{ if .Site.Params.subtitle }}{{ $.Scratch.Set "subtitle" .Site.Params.subtitle }}{{ end }}
-  {{ if .Site.Params.bigimg }}{{ $.Scratch.Set "bigimg" .Site.Params.bigimg }}{{ end }}
-{{ else }}
-  {{ $.Scratch.Set "title" .Title }}
-  {{ if .Params.subtitle }}{{ $.Scratch.Set "subtitle" .Params.subtitle }}{{ end }}
-  {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
-{{ end }}
-{{ $bigimg := $.Scratch.Get "bigimg" }}
-
-{{ if or $bigimg ($.Scratch.Get "title") }}
-  {{ if $bigimg }}
-    <div id="header-big-imgs" data-num-img={{len $bigimg}} {{range $i, $img := $bigimg}}data-img-src-{{add $i 1}}="{{$img.src | absURL }}" {{ if $img.desc}}data-img-desc-{{add $i 1}}="{{$img.desc}}"{{end}}{{end}}></div>
-  {{ end }}
-
-  <header class="header-section {{ if $bigimg }}has-img{{ end }}">
-    {{ if $bigimg }}
-      <div class="intro-header big-img">
-        {{ $subtitle := $.Scratch.Get "subtitle" }}
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              <div class="{{ .Type }}-heading">
-                <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
-                  {{ if $subtitle }}
-                    {{ if eq .Type "page" }}
-                      <hr class="small">
-                      <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
-                    {{ else }}
-                      <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
-                    {{ end }}
-                  {{ end }}
-                  {{ if eq .Type "post" }}
-                    {{ partial "post_meta.html" . }}
-                  {{ end }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="img-desc" style="display: inline;"></span>
-      </div>
-    {{end}}
-    <div class="intro-header no-img">
-      {{ $subtitle := $.Scratch.Get "subtitle" }}
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="{{ .Type }}-heading">
-              <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
-                {{ if $subtitle }}
-                  {{ if eq .Type "page" }}
-                    <hr class="small">
-                    <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
-                  {{ else }}
-                    <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
-                  {{ end }}
-                {{ end }}
-                {{ if eq .Type "post" }}
-                  {{ partial "post_meta.html" . }}
-                {{ end }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-{{ else }}
-  <div class="intro-header"></div>
-{{ end }}
+<header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="/" class="c-logo-link" >
+        <img src="/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      {{ if eq .Permalink .Site.BaseURL }}
+        <li class="active">
+          <a class="c-nav-link active" href="/">Home</a>
+        </li>
+      {{ else }}
+        <li><a class="c-nav-link" href="/">Home</a></li>
+      {{ end }}
+    {{ range .Site.Sections.page }}
+      {{ if eq .Permalink $.Permalink }}
+        <li class="active">
+          <a href="{{ .Permalink }}" class= "c-nav-link active">
+            {{- .Title -}}
+          </a>
+        </li>
+      {{ else }}
+        <li class="">
+          <a href="{{ .Permalink }}" class= "c-nav-link">
+            {{- .Title -}}
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
+    </ul>
+  </nav>
+</header>
