@@ -23,7 +23,6 @@ html {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: $color-red-light;
   font-family: $font-family-heading-default;
   font-weight: 700;
   .wf-active & {
@@ -33,21 +32,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: $color-green-light;
-  text-decoration: none;
-  &:hover,:visited {
-    color: $color-yellow-light;
+  &, h1,h2,h3,h4,h6,h5 {
+    color: $color-green-light;
+    text-decoration: none;
+  }
+  &:visited {
+    &, h1,h2,h3,h4,h6,h5 & {
+      color: $color-orange-light;
+    }
   }
   &:hover{
-    border-bottom: 1px solid $color-yellow-light;
-  }
-  & h1,h2,h3,h4,h5 {
-    color: $color-green-light;
-    &:hover,:visited {
-      color: $color-yellow-light;
-    }
-    &:hover{
-      border-bottom: 1px solid $color-yellow-light;
+    &, h1,h2,h3,h4,h5,h6 & {
+      border-bottom: 1px solid $color-orange-light;
+      color: $color-orange-light;
     }
   }
 }

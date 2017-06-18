@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on My New Hugo Site</title>
+    <link>https://vijayabharathib.github.io/beehive_hugo_theme/tags/hugo/</link>
+    <description>Recent content in Hugo on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Jun 2017 22:13:15 +0530</lastBuildDate>
+    
+	<atom:link href="https://vijayabharathib.github.io/beehive_hugo_theme/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>about</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/page/about/</link>
+      <pubDate>Sat, 17 Jun 2017 22:13:15 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/page/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beehive theme hugo lessons</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/beehive-theme-hugo-lessons/</link>
+      <pubDate>Sat, 17 Jun 2017 12:50:08 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/beehive-theme-hugo-lessons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>creating new hugo theme</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+  </channel>
+</rss>

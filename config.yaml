@@ -1,7 +1,8 @@
-baseURL: "http://example.org/"
+baseURL: "https://vijayabharathib.github.io/beehive_hugo_theme/"
 languageCode: "en-us"
 title: "My New Hugo Site"
 theme: "beehive"
+publishDir: "docs"
 
 author:
   vijayabharathib:
