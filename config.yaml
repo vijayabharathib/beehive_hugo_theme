@@ -4,6 +4,7 @@ title: "My New Hugo Site"
 theme: "beehive"
 publishDir: "docs"
 canonifyURLs: true
+paginate: 3
 author:
   vijayabharathib:
     firstname: "Vijayabharathi"

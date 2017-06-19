@@ -13,14 +13,12 @@ html {
   background-color: $color-teal-dark;
   color: $color-teal-light;
   color: transparentize($color-teal-light, .1);
-  font-size: 100%;
+  font-size: 120%;
 
   &.wf-active {
     font-family: $font-family-body-webfont;
   }
 }
-
-
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-heading-default;
@@ -33,12 +31,12 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   &, h1,h2,h3,h4,h6,h5 {
-    color: $color-green-light;
+    color: $color-orange-light;
     text-decoration: none;
   }
   &:visited {
     &, h1,h2,h3,h4,h6,h5 & {
-      color: $color-orange-light;
+      color: $color-green-light;
     }
   }
   &:hover{
