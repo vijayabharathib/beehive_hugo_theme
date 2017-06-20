@@ -51,6 +51,9 @@ ul.c-nav-links {
         color: $color-yellow-light;
       }
     }
+    &:active {
+      background: $color-teal-dark;
+    }
     cursor: pointer;
   }
 }
@@ -64,4 +67,5 @@ a.c-nav-link {
     border: none;
     color: $color-yellow-light;
   }
+
 }

@@ -10,7 +10,7 @@ html {
   background-color: #011;
   color: #bee;
   color: rgba(187, 238, 238, 0.9);
-  font-size: 100%; }
+  font-size: 120%; }
   html.wf-active {
     font-family: "pt-sans", Arial, Helvetica, sans-serif; }
 
@@ -22,10 +22,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700; }
 
 a, a h1, a h2, a h3, a h4, a h6, a h5 {
-  color: #cf9;
+  color: #fc6;
   text-decoration: none; }
 a:visited, a:visited h1, a:visited h2, a:visited h3, a:visited h4, a:visited h6, h5 a:visited {
-  color: #fc6; }
+  color: #cf9; }
 a:hover, a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, h6 a:hover {
   color: #c04; }
 

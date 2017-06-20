@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Creating new hugo theme - Part 3</title>
+
+
+  <link rel="canonical" href="https://vijayabharathib.github.io/post/creating-new-hugo-theme-part3/" />
+  <link rel="alternate" href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" type="application/rss+xml" title="My New Hugo Site">
+  <link rel="stylesheet" href="https://vijayabharathib.github.io/beehive_hugo_theme/css/main.css" />
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'kog5rgk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+  <body>
+    <div class="site">
+      <header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="https://vijayabharathib.github.io/beehive_hugo_theme/" class="c-logo-link" >
+        <img src="https://vijayabharathib.github.io/beehive_hugo_theme/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      
+        <li><a class="c-nav-link" href="https://vijayabharathib.github.io/beehive_hugo_theme/">Home</a></li>
+      
+    
+      
+        <li class="">
+          <a href="https://vijayabharathib.github.io/beehive_hugo_theme/page/about/" class= "c-nav-link">About</a>
+        </li>
+      
+    
+    </ul>
+  </nav>
+</header>
+
+      <main role="main" class="site-main">
+        
+  <article role="main" class="o-post">
+    <h1>Creating new hugo theme - Part 3</h1>
+    <h2>Sample content for new themes</h2>
+    
+
+<h2 id="the-theme-development-cycle">The Theme Development Cycle</h2>
+
+<p>When you&rsquo;re working on a theme, you will make changes in the theme&rsquo;s directory, rebuild the site, and check your changes in the browser. Hugo makes this very easy:</p>
+
+<ol>
+<li>Purge the public/ directory.</li>
+<li>Run the built in web server in watch mode.</li>
+<li>Open your site in a browser.</li>
+<li>Update the theme.</li>
+<li>Glance at your browser window to see changes.</li>
+<li>Return to step 4.</li>
+</ol>
+
+<p>I’ll throw in one more opinion: never work on a theme on a live site. Always work on a copy of your site. Make changes to your theme, test them, then copy them up to your site. For added safety, use a tool like Git to keep a revision history of your content and your theme. Believe me when I say that it is too easy to lose both your mind and your changes.</p>
+
+<p>Check the main Hugo site for information on using Git with Hugo.</p>
+
+<h3 id="purge-the-public-directory">Purge the public/ Directory</h3>
+
+<p>When generating the site, Hugo will create new files and update existing ones in the <code>public/</code> directory. It will not delete files that are no longer used. For example, files that were created in the wrong directory or with the wrong title will remain. If you leave them, you might get confused by them later. I recommend cleaning out your site prior to generating it.</p>
+
+<p>Note: If you&rsquo;re building on an SSD, you should ignore this. Churning on a SSD can be costly.</p>
+
+<h3 id="hugo-s-watch-option">Hugo&rsquo;s Watch Option</h3>
+
+<p>Hugo&rsquo;s &ldquo;<code>--watch</code>&rdquo; option will monitor the content/ and your theme directories for changes and rebuild the site automatically.</p>
+
+<h3 id="live-reload">Live Reload</h3>
+
+<p>Hugo&rsquo;s built in web server supports live reload. As pages are saved on the server, the browser is told to refresh the page. Usually, this happens faster than you can say, &ldquo;Wow, that&rsquo;s totally amazing.&rdquo;</p>
+
+<h3 id="development-commands">Development Commands</h3>
+
+<p>Use the following commands as the basis for your workflow.</p>
+
+<pre><code>## purge old files. hugo will recreate the public directory.
+##
+$ rm -rf public
+##
+## run hugo in watch mode
+##
+$ hugo server --watch --verbose
+</code></pre>
+
+<p>Here&rsquo;s sample output showing Hugo detecting a change to the template for the home page. Once generated, the web browser automatically reloaded the page. I&rsquo;ve said this before, it&rsquo;s amazing.</p>
+
+<pre><code>$ rm -rf public
+$ hugo server --watch --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content
+0 future content
+0 pages created
+0 tags created
+0 categories created
+in 2 ms
+Watching for changes in /Users/quoha/Sites/zafta/content
+Serving pages from /Users/quoha/Sites/zafta/public
+Web Server is available at http://localhost:1313
+Press Ctrl+C to stop
+INFO: 2014/09/29 File System Event: [&quot;/Users/quoha/Sites/zafta/themes/zafta/layouts/index.html&quot;: MODIFY|ATTRIB]
+Change detected, rebuilding site
+
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content
+0 future content
+0 pages created
+0 tags created
+0 categories created
+in 1 ms
+</code></pre>
+
+    <ul>
+    
+      <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/michaelhenderson/">Michael Henderson</a> </li>
+    
+    </ul>
+  </article>
+
+      </main>
+      <aside class="side-bar" role="complementary">
+</aside>
+
+      <footer class="site-footer" role="contentinfo">
+  <p>Vijayabharathi B - Hugo - Beehive</p>
+</footer>
+
+    </div>
+  </body>
+</html>

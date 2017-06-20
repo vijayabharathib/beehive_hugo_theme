@@ -1,40 +1,50 @@
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-  <ul class="pager main-pager">
+  <ul class="o-pagination">
     {{ if ne .Paginator.First.PageNumber .Paginator.PageNumber }}
       <li class="first active">
-    {{ else }}
-      <li class="first inactive">
-    {{ end }}
-        <a href="{{ .URL }}page/{{ .Paginator.First.PageNumber }}">First
+        <a href="{{ .URL }}page/{{ .Paginator.First.PageNumber }}">&larrb; First
         </a>
       </li>
+    {{ else }}
+      <li class="first inactive">
+        <a href="#">&larrb; First
+        </a>
+      </li>
+    {{ end }}
     {{ if .Paginator.HasPrev }}
-      <li class="previous">
+      <li class="previous active">
         <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ "Previous Page" }}</a>
       </li>
     {{ else }}
       <li class="previous inactive">
-        <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ "Previous Page" }}</a>
+        <a href="#">&larr; {{ "Previous Page" }}</a>
       </li>
     {{ end }}
     {{ $currentPageNum := .Paginator.PageNumber }}
-    <ul class="page-numbers">
     {{ range .Paginator.Pagers }}
-        <li class="page-number {{ if eq $currentPageNum .PageNumber }}inactive{{ end }}">
+      {{ if eq $currentPageNum .PageNumber }}
+        <li class="page-number inactive">
+          <a href="#">{{ .PageNumber }}</a>
+        </li>
+      {{ else }}
+        <li class="page-number active">
           <a href="{{ .URL }}">{{ .PageNumber }}</a>
         </li>
+      {{ end }}
     {{ end }}
-  </ul>
     {{ if .Paginator.HasNext }}
-      <li class="next">
+      <li class="next active">
         <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">{{ "Next Page" }} &rarr;</a>
       </li>
+    {{ else }}
+      <li class="next inactive"><a href="#">{{ "Next Page" }} &rarr;</a></li>
     {{ end }}
     {{ if ne .Paginator.Last.PageNumber .Paginator.PageNumber }}
-    <li class="last">
-      <a href="{{ .URL }}page/{{ .Paginator.Last.PageNumber }}">Last
-      </a>
-    </li>
+      <li class="last active">
+        <a href="{{ .URL }}page/{{ .Paginator.Last.PageNumber }}">Last &rarrb;</a>
+      </li>
+    {{ else }}
+      <li class="last inactive"><a href="#">Last &rarrb;</a></li>
     {{ end }}
   </ul>
 {{ end }}

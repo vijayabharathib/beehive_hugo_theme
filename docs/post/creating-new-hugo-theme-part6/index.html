@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Creating new hugo theme - Part 6</title>
+
+
+  <link rel="canonical" href="https://vijayabharathib.github.io/post/creating-new-hugo-theme-part6/" />
+  <link rel="alternate" href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" type="application/rss+xml" title="My New Hugo Site">
+  <link rel="stylesheet" href="https://vijayabharathib.github.io/beehive_hugo_theme/css/main.css" />
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'kog5rgk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+  <body>
+    <div class="site">
+      <header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="https://vijayabharathib.github.io/beehive_hugo_theme/" class="c-logo-link" >
+        <img src="https://vijayabharathib.github.io/beehive_hugo_theme/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      
+        <li><a class="c-nav-link" href="https://vijayabharathib.github.io/beehive_hugo_theme/">Home</a></li>
+      
+    
+      
+        <li class="">
+          <a href="https://vijayabharathib.github.io/beehive_hugo_theme/page/about/" class= "c-nav-link">About</a>
+        </li>
+      
+    
+    </ul>
+  </nav>
+</header>
+
+      <main role="main" class="site-main">
+        
+  <article role="main" class="o-post">
+    <h1>Creating new hugo theme - Part 6</h1>
+    <h2>Sample content for new themes</h2>
+    
+
+<h2 id="sharing-templates">Sharing Templates</h2>
+
+<p>If you&rsquo;ve been following along, you probably noticed that posts have titles in the browser and the home page doesn&rsquo;t. That&rsquo;s because we didn&rsquo;t put the title in the home page&rsquo;s template (layouts/index.html). That&rsquo;s an easy thing to do, but let&rsquo;s look at a different option.</p>
+
+<p>We can put the common bits into a shared template that&rsquo;s stored in the themes/zafta/layouts/partials/ directory.</p>
+
+<h3 id="create-the-header-and-footer-partials">Create the Header and Footer Partials</h3>
+
+<p>In Hugo, a partial is a sugar-coated template. Normally a template reference has a path specified. Partials are different. Hugo searches for them along a TODO defined search path. This makes it easier for end-users to override the theme&rsquo;s presentation.</p>
+
+<pre><code>$ vi themes/zafta/layouts/partials/header.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;{{ .Title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+:wq
+
+$ vi themes/zafta/layouts/partials/footer.html
+&lt;/body&gt;
+&lt;/html&gt;
+:wq
+</code></pre>
+
+<h3 id="update-the-home-page-template-to-use-the-partials">Update the Home Page Template to Use the Partials</h3>
+
+<p>The most noticeable difference between a template call and a partials call is the lack of path:</p>
+
+<pre><code>{{ template &quot;theme/partials/header.html&quot; . }}
+</code></pre>
+
+<p>versus</p>
+
+<pre><code>{{ partial &quot;header.html&quot; . }}
+</code></pre>
+
+<p>Both pass in the context.</p>
+
+<p>Let&rsquo;s change the home page template to use these new partials.</p>
+
+<pre><code>$ vi themes/zafta/layouts/index.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;posts&lt;/h1&gt;
+  {{ range first 10 .Data.Pages }}
+    {{ if eq .Type &quot;post&quot;}}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+
+  &lt;h1&gt;pages&lt;/h1&gt;
+  {{ range .Data.Pages }}
+    {{ if or (eq .Type &quot;page&quot;) (eq .Type &quot;about&quot;) }}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre>
+
+<p>Generate the web site and verify the results. The title on the home page is now &ldquo;your title here&rdquo;, which comes from the &ldquo;title&rdquo; variable in the config.toml file.</p>
+
+<h3 id="update-the-default-single-template-to-use-the-partials">Update the Default Single Template to Use the Partials</h3>
+
+<pre><code>$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre>
+
+<p>Generate the web site and verify the results. The title on the posts and the about page should both reflect the value in the markdown file.</p>
+
+<h2 id="add-date-published-to-posts">Add “Date Published” to Posts</h2>
+
+<p>It&rsquo;s common to have posts display the date that they were written or published, so let&rsquo;s add that. The front matter of our posts has a variable named &ldquo;date.&rdquo; It&rsquo;s usually the date the content was created, but let&rsquo;s pretend that&rsquo;s the value we want to display.</p>
+
+<h3 id="add-date-published-to-the-template">Add “Date Published” to the Template</h3>
+
+<p>We&rsquo;ll start by updating the template used to render the posts. The template code will look like:</p>
+
+<pre><code>{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}
+</code></pre>
+
+<p>Posts use the default single template, so we&rsquo;ll change that file.</p>
+
+<pre><code>$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &lt;h2&gt;{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}&lt;/h2&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre>
+
+<p>Generate the web site and verify the results. The posts now have the date displayed in them. There&rsquo;s a problem, though. The &ldquo;about&rdquo; page also has the date displayed.</p>
+
+<p>As usual, there are a couple of ways to make the date display only on posts. We could do an &ldquo;if&rdquo; statement like we did on the home page. Another way would be to create a separate template for posts.</p>
+
+<p>The &ldquo;if&rdquo; solution works for sites that have just a couple of content types. It aligns with the principle of &ldquo;code for today,&rdquo; too.</p>
+
+<p>Let&rsquo;s assume, though, that we&rsquo;ve made our site so complex that we feel we have to create a new template type. In Hugo-speak, we&rsquo;re going to create a section template.</p>
+
+<p>Let&rsquo;s restore the default single template before we forget.</p>
+
+<pre><code>$ mkdir themes/zafta/layouts/post
+$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre>
+
+<p>Now we&rsquo;ll update the post&rsquo;s version of the single template. If you remember Hugo&rsquo;s rules, the template engine will use this version over the default.</p>
+
+<pre><code>$ vi themes/zafta/layouts/post/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &lt;h2&gt;{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}&lt;/h2&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+
+</code></pre>
+
+<p>Note that we removed the date logic from the default template and put it in the post template. Generate the web site and verify the results. Posts have dates and the about page doesn&rsquo;t.</p>
+
+<h3 id="don-t-repeat-yourself">Don&rsquo;t Repeat Yourself</h3>
+
+<p>DRY is a good design goal and Hugo does a great job supporting it. Part of the art of a good template is knowing when to add a new template and when to update an existing one. While you&rsquo;re figuring that out, accept that you&rsquo;ll be doing some refactoring. Hugo makes that easy and fast, so it&rsquo;s okay to delay splitting up a template.</p>
+
+    <ul>
+    
+      <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/michaelhenderson/">Michael Henderson</a> </li>
+    
+    </ul>
+  </article>
+
+      </main>
+      <aside class="side-bar" role="complementary">
+</aside>
+
+      <footer class="site-footer" role="contentinfo">
+  <p>Vijayabharathi B - Hugo - Beehive</p>
+</footer>
+
+    </div>
+  </body>
+</html>
