@@ -52,7 +52,34 @@
   <article role="main" class="o-post">
     <h1>beehive theme hugo lessons</h1>
     <h2>lessons during beehive theme creation</h2>
-    
+    <pre><code>{{ if ne .Paginator.First.PageNumber .Paginator.PageNumber }}
+  &lt;li class=&quot;first active&quot;&gt;
+    &lt;a href=&quot;{{ .URL }}page/{{ .Paginator.First.PageNumber }}&quot;&gt;First
+    &lt;/a&gt;
+  &lt;/li&gt;
+{{ else }}
+  &lt;li class=&quot;first inactive&quot;&gt;
+    &lt;a href=&quot;{{ .URL }}page/{{ .Paginator.First.PageNumber }}&quot;&gt;First
+    &lt;/a&gt;
+  &lt;/li&gt;
+{{ end }}
+{{/* if .Paginator.HasPrev }}
+  &lt;li class=&quot;previous&quot;&gt;
+    &lt;a href=&quot;{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}&quot;&gt;&amp;larr; {{ &quot;Previous Page&quot; }}&lt;/a&gt;
+  &lt;/li&gt;
+{{ else }}
+  &lt;li class=&quot;previous inactive&quot;&gt;
+    &lt;a href=&quot;{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}&quot;&gt;&amp;larr; {{ &quot;Previous Page&quot; }}&lt;/a&gt;
+  &lt;/li&gt;
+{{ end }}
+</code></pre>
+
+<p>if and else parts on &lsquo;first page&rsquo; worked ok.</p>
+
+<p>i just copied the if part of &lsquo;prev&rsquo; page and placed it under else part.</p>
+
+<p>obviously, the else part did not have a prev page and ended up throwing panic error.</p>
+
     <ul>
     
       <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/vijayabharathib/">Vijayabharathi Balasubramanian</a> </li>

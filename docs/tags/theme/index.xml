@@ -26,17 +26,70 @@
       <pubDate>Sat, 17 Jun 2017 12:50:08 +0530</pubDate>
       
       <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/beehive-theme-hugo-lessons/</guid>
-      <description></description>
+      <description>{{ if ne .Paginator.First.PageNumber .Paginator.PageNumber }} &amp;lt;li class=&amp;quot;first active&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;{{ .URL }}page/{{ .Paginator.First.PageNumber }}&amp;quot;&amp;gt;First &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; {{ else }} &amp;lt;li class=&amp;quot;first inactive&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;{{ .URL }}page/{{ .Paginator.First.PageNumber }}&amp;quot;&amp;gt;First &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; {{ end }} {{/* if .Paginator.HasPrev }} &amp;lt;li class=&amp;quot;previous&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}&amp;quot;&amp;gt;&amp;amp;larr; {{ &amp;quot;Previous Page&amp;quot; }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; {{ else }} &amp;lt;li class=&amp;quot;previous inactive&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}&amp;quot;&amp;gt;&amp;amp;larr; {{ &amp;quot;Previous Page&amp;quot; }}&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; {{ end }}  if and else parts on &amp;lsquo;first page&amp;rsquo; worked ok.</description>
     </item>
     
     <item>
-      <title>creating new hugo theme</title>
-      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme/</link>
+      <title>Creating new hugo theme - Part 1</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part1/</link>
       <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
       
-      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme/</guid>
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part1/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating new hugo theme - Part 2</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part2/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part2/</guid>
+      <description>Create a New Site Let&amp;rsquo;s use Hugo to create a new web site. I&amp;rsquo;m a Mac user, so I&amp;rsquo;ll create mine in my home directory, in the Sites folder. If you&amp;rsquo;re using Linux, you might have to create the folder first.
+The &amp;ldquo;new site&amp;rdquo; command will create a skeleton of a site. It will give you the basic directory structure and a useable configuration file.
+$ hugo new site ~/Sites/zafta $ cd ~/Sites/zafta $ ls -l total 8 drwxr-xr-x 7 quoha staff 238 Sep 29 16:49 .</description>
+    </item>
+    
+    <item>
+      <title>Creating new hugo theme - Part 3</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part3/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part3/</guid>
+      <description>The Theme Development Cycle When you&amp;rsquo;re working on a theme, you will make changes in the theme&amp;rsquo;s directory, rebuild the site, and check your changes in the browser. Hugo makes this very easy:
+ Purge the public/ directory. Run the built in web server in watch mode. Open your site in a browser. Update the theme. Glance at your browser window to see changes. Return to step 4.  I’ll throw in one more opinion: never work on a theme on a live site.</description>
+    </item>
+    
+    <item>
+      <title>Creating new hugo theme - Part 4</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part4/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part4/</guid>
+      <description>Update the Home Page Template The home page is one of a few special pages that Hugo creates automatically. As mentioned earlier, it looks for one of three files in the theme&amp;rsquo;s layout/ directory:
+ index.html _default/list.html _default/single.html  We could update one of the default templates, but a good design decision is to update the most specific template available. That&amp;rsquo;s not a hard and fast rule (in fact, we&amp;rsquo;ll break it a few times in this tutorial), but it is a good generalization.</description>
+    </item>
+    
+    <item>
+      <title>Creating new hugo theme - Part 5</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part5/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part5/</guid>
+      <description>Creating Top Level Pages Let&amp;rsquo;s add an &amp;ldquo;about&amp;rdquo; page and display it at the top level (as opposed to a sub-level like we did with posts).
+The default in Hugo is to use the directory structure of the content/ directory to guide the location of the generated html in the public/ directory. Let&amp;rsquo;s verify that by creating an &amp;ldquo;about&amp;rdquo; page at the top level:
+$ vi content/about.md +++ title = &amp;quot;about&amp;quot; description = &amp;quot;about this site&amp;quot; date = &amp;quot;2014-09-27&amp;quot; slug = &amp;quot;about time&amp;quot; +++ ## about us i&#39;m speechless :wq  Generate the web site and verify the results.</description>
+    </item>
+    
+    <item>
+      <title>Creating new hugo theme - Part 6</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part6/</link>
+      <pubDate>Fri, 16 Jun 2017 22:02:51 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/creating-new-hugo-theme-part6/</guid>
+      <description>Sharing Templates If you&amp;rsquo;ve been following along, you probably noticed that posts have titles in the browser and the home page doesn&amp;rsquo;t. That&amp;rsquo;s because we didn&amp;rsquo;t put the title in the home page&amp;rsquo;s template (layouts/index.html). That&amp;rsquo;s an easy thing to do, but let&amp;rsquo;s look at a different option.
+We can put the common bits into a shared template that&amp;rsquo;s stored in the themes/zafta/layouts/partials/ directory.
+Create the Header and Footer Partials In Hugo, a partial is a sugar-coated template.</description>
     </item>
     
   </channel>
