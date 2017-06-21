@@ -4,12 +4,22 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top: 1px solid $color-teal-light;
+  padding-top: 10px;
   li {
     display: inline-block;
     margin-left: 10px;
   }
-  .inactive a {
-    color: #ccc;
-    cursor: default;
+  a {
+    padding: 5px 10px;
+  }
+  .inactive {
+    &:hover {
+      background-color: $color-teal-dark;
+    }
+    a {
+      color: #ccc;
+      cursor: default;
+    }
   }
 }
