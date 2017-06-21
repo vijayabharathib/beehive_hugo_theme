@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hugo template primer - Part 1</title>
+
+
+  <link rel="canonical" href="https://vijayabharathib.github.io/post/hugo-template-primer-part1/" />
+  <link rel="alternate" href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" type="application/rss+xml" title="My New Hugo Site">
+  <link rel="stylesheet" href="https://vijayabharathib.github.io/beehive_hugo_theme/css/main.css" />
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'kog5rgk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+  <body>
+    <div class="site">
+      <header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="https://vijayabharathib.github.io/beehive_hugo_theme/" class="c-logo-link" >
+        <img src="https://vijayabharathib.github.io/beehive_hugo_theme/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      
+        <li><a class="c-nav-link" href="https://vijayabharathib.github.io/beehive_hugo_theme/">Home</a></li>
+      
+    
+      
+        <li class="">
+          <a href="https://vijayabharathib.github.io/beehive_hugo_theme/page/about/" class= "c-nav-link">About</a>
+        </li>
+      
+    
+    </ul>
+  </nav>
+</header>
+
+      <main role="main" class="site-main">
+        
+  <article role="main" class="o-post">
+    <h1>Hugo template primer - Part 1</h1>
+    <h2>Sample content for new themes</h2>
+    
+
+<p>Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience that it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks you will find a lot of
+similarities in go templates.</p>
+
+<p>This document is a brief primer on using go templates. The [go docs][gohtmltemplate]
+provide more details.</p>
+
+<h2 id="introduction-to-go-templates">Introduction to Go Templates</h2>
+
+<p>Go templates provide an extremely simple template language. It adheres to the
+belief that only the most basic of logic belongs in the template or view layer.
+One consequence of this simplicity is that go templates parse very quickly.</p>
+
+<p>A unique characteristic of go templates is they are content aware. Variables and
+content will be sanitized depending on the context of where they are used. More
+details can be found in the [go docs][gohtmltemplate].</p>
+
+<h2 id="basic-syntax">Basic Syntax</h2>
+
+<p>Go lang templates are html files with the addition of variables and
+functions.</p>
+
+<p><strong>Go variables and functions are accessible within {{ }}</strong></p>
+
+<p>Accessing a predefined variable &ldquo;foo&rdquo;:</p>
+
+<pre><code>{{ foo }}
+</code></pre>
+
+<p><strong>Parameters are separated using spaces</strong></p>
+
+<p>Calling the add function with input of 1, 2:</p>
+
+<pre><code>{{ add 1 2 }}
+</code></pre>
+
+<p><strong>Methods and fields are accessed via dot notation</strong></p>
+
+<p>Accessing the Page Parameter &ldquo;bar&rdquo;</p>
+
+<pre><code>{{ .Params.bar }}
+</code></pre>
+
+<p><strong>Parentheses can be used to group items together</strong></p>
+
+<pre><code>{{ if or (isset .Params &quot;alt&quot;) (isset .Params &quot;caption&quot;) }} Caption {{ end }}
+</code></pre>
+
+<h2 id="variables">Variables</h2>
+
+<p>Each go template has a struct (object) made available to it. In hugo each
+template is passed either a page or a node struct depending on which type of
+page you are rendering. More details are available on the
+<a href="https://vijayabharathib.github.io/beehive_hugo_theme/layout/variables">variables</a> page.</p>
+
+<p>A variable is accessed by referencing the variable name.</p>
+
+<pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
+</code></pre>
+
+<p>Variables can also be defined and referenced.</p>
+
+<pre><code>{{ $address := &quot;123 Main St.&quot;}}
+{{ $address }}
+</code></pre>
+
+    <ul>
+    
+      <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/michaelhenderson/">Michael Henderson</a> </li>
+    
+    </ul>
+  </article>
+
+      </main>
+      <aside class="side-bar" role="complementary">
+</aside>
+
+      <footer class="site-footer" role="contentinfo">
+  <p>Vijayabharathi B - Hugo - Beehive</p>
+</footer>
+
+    </div>
+  </body>
+</html>

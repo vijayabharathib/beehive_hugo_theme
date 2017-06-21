@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hugo template primer - Part 4</title>
+
+
+  <link rel="canonical" href="https://vijayabharathib.github.io/post/hugo-template-primer-part4/" />
+  <link rel="alternate" href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" type="application/rss+xml" title="My New Hugo Site">
+  <link rel="stylesheet" href="https://vijayabharathib.github.io/beehive_hugo_theme/css/main.css" />
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'kog5rgk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+  <body>
+    <div class="site">
+      <header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="https://vijayabharathib.github.io/beehive_hugo_theme/" class="c-logo-link" >
+        <img src="https://vijayabharathib.github.io/beehive_hugo_theme/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      
+        <li><a class="c-nav-link" href="https://vijayabharathib.github.io/beehive_hugo_theme/">Home</a></li>
+      
+    
+      
+        <li class="">
+          <a href="https://vijayabharathib.github.io/beehive_hugo_theme/page/about/" class= "c-nav-link">About</a>
+        </li>
+      
+    
+    </ul>
+  </nav>
+</header>
+
+      <main role="main" class="site-main">
+        
+  <article role="main" class="o-post">
+    <h1>Hugo template primer - Part 4</h1>
+    <h2>Sample content for new themes</h2>
+    
+
+<h1 id="hugo-parameters">Hugo Parameters</h1>
+
+<p>Hugo provides the option of passing values to the template language
+through the site configuration (for sitewide values), or through the meta
+data of each specific piece of content. You can define any values of any
+type (supported by your front matter/config format) and use them however
+you want to inside of your templates.</p>
+
+<h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
+
+<p>In each piece of content you can provide variables to be used by the
+templates. This happens in the <a href="https://vijayabharathib.github.io/beehive_hugo_theme/content/front-matter">front matter</a>.</p>
+
+<p>An example of this is used in this documentation site. Most of the pages
+benefit from having the table of contents provided. Sometimes the TOC just
+doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
+of some pages to turn off the TOC from being displayed.</p>
+
+<p>Here is the example front matter:</p>
+
+<pre><code>---
+title: &quot;Permalinks&quot;
+date: &quot;2013-11-18&quot;
+aliases:
+  - &quot;/doc/permalinks/&quot;
+groups: [&quot;extras&quot;]
+groups_weight: 30
+notoc: true
+---
+</code></pre>
+
+<p>Here is the corresponding code inside of the template:</p>
+
+<pre><code>  {{ if not .Params.notoc }}
+    &lt;div id=&quot;toc&quot; class=&quot;well col-md-4 col-sm-6&quot;&gt;
+    {{ .TableOfContents }}
+    &lt;/div&gt;
+  {{ end }}
+</code></pre>
+
+    <ul>
+    
+      <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/michaelhenderson/">Michael Henderson</a> </li>
+    
+    </ul>
+  </article>
+
+      </main>
+      <aside class="side-bar" role="complementary">
+</aside>
+
+      <footer class="site-footer" role="contentinfo">
+  <p>Vijayabharathi B - Hugo - Beehive</p>
+</footer>
+
+    </div>
+  </body>
+</html>

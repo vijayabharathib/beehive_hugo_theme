@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hugo template primer - Part 3</title>
+
+
+  <link rel="canonical" href="https://vijayabharathib.github.io/post/hugo-template-primer-part3/" />
+  <link rel="alternate" href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" type="application/rss+xml" title="My New Hugo Site">
+  <link rel="stylesheet" href="https://vijayabharathib.github.io/beehive_hugo_theme/css/main.css" />
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'kog5rgk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+  <body>
+    <div class="site">
+      <header class="site-header" role="banner">
+    <figure class="o-logo">
+      <a href="https://vijayabharathib.github.io/beehive_hugo_theme/" class="c-logo-link" >
+        <img src="https://vijayabharathib.github.io/beehive_hugo_theme/img/newlogo.png" class="c-logo-image" alt="logo" />
+      </a>
+    </figure>
+  <nav class="o-site-nav">
+    <ul class="c-nav-links" >
+      
+        <li><a class="c-nav-link" href="https://vijayabharathib.github.io/beehive_hugo_theme/">Home</a></li>
+      
+    
+      
+        <li class="">
+          <a href="https://vijayabharathib.github.io/beehive_hugo_theme/page/about/" class= "c-nav-link">About</a>
+        </li>
+      
+    
+    </ul>
+  </nav>
+</header>
+
+      <main role="main" class="site-main">
+        
+  <article role="main" class="o-post">
+    <h1>Hugo template primer - Part 3</h1>
+    <h2>Sample content for new themes</h2>
+    
+
+<h2 id="pipes">Pipes</h2>
+
+<p>One of the most powerful components of go templates is the ability to
+stack actions one after another. This is done by using pipes. Borrowed
+from unix pipes, the concept is simple, each pipeline&rsquo;s output becomes the
+input of the following pipe.</p>
+
+<p>Because of the very simple syntax of go templates, the pipe is essential
+to being able to chain together function calls. One limitation of the
+pipes is that they only can work with a single value and that value
+becomes the last parameter of the next pipeline.</p>
+
+<p>A few simple examples should help convey how to use the pipe.</p>
+
+<p><strong>Example 1 :</strong></p>
+
+<pre><code>{{ if eq 1 1 }} Same {{ end }}
+</code></pre>
+
+<p>is the same as</p>
+
+<pre><code>{{ eq 1 1 | if }} Same {{ end }}
+</code></pre>
+
+<p>It does look odd to place the if at the end, but it does provide a good
+illustration of how to use the pipes.</p>
+
+<p><strong>Example 2 :</strong></p>
+
+<pre><code>{{ index .Params &quot;disqus_url&quot; | html }}
+</code></pre>
+
+<p>Access the page parameter called &ldquo;disqus_url&rdquo; and escape the HTML.</p>
+
+<p><strong>Example 3 :</strong></p>
+
+<pre><code>{{ if or (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
+Stuff Here
+{{ end }}
+</code></pre>
+
+<p>Could be rewritten as</p>
+
+<pre><code>{{  isset .Params &quot;caption&quot; | or isset .Params &quot;title&quot; | or isset .Params &quot;attr&quot; | if }}
+Stuff Here
+{{ end }}
+</code></pre>
+
+<h2 id="context-aka-the-dot">Context (aka. the dot)</h2>
+
+<p>The most easily overlooked concept to understand about go templates is that {{ . }}
+always refers to the current context. In the top level of your template this
+will be the data set made available to it. Inside of a iteration it will have
+the value of the current item. When inside of a loop the context has changed. .
+will no longer refer to the data available to the entire page. If you need to
+access this from within the loop you will likely want to set it to a variable
+instead of depending on the context.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>  {{ $title := .Site.Title }}
+  {{ range .Params.tags }}
+    &lt;li&gt; &lt;a href=&quot;{{ $baseurl }}/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt; - {{ $title }} &lt;/li&gt;
+  {{ end }}
+</code></pre>
+
+<p>Notice how once we have entered the loop the value of {{ . }} has changed. We
+have defined a variable outside of the loop so we have access to it from within
+the loop.</p>
+
+    <ul>
+    
+      <li> <a href="https://vijayabharathib.github.io/beehive_hugo_theme/author/michaelhenderson/">Michael Henderson</a> </li>
+    
+    </ul>
+  </article>
+
+      </main>
+      <aside class="side-bar" role="complementary">
+</aside>
+
+      <footer class="site-footer" role="contentinfo">
+  <p>Vijayabharathi B - Hugo - Beehive</p>
+</footer>
+
+    </div>
+  </body>
+</html>
