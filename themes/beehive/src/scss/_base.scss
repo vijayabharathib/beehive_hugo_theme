@@ -18,11 +18,32 @@ html {
     font-family: $font-family-body-webfont;
   }
 }
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+@media (min-width: 40em) {
+
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
 h2 {
   font-size: 2em;
   line-height: 1.1em;
 }
-
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-heading-default;
@@ -46,7 +67,7 @@ a {
   &:hover{
     &, h1,h2,h3,h4,h5,h6 & {
       //border-bottom: 1px solid $color-yellow-light;
-      color: $color-brand;
+      color: $color-red-light;
     }
   }
 }
@@ -60,7 +81,6 @@ p {
 
 ul {
   margin: 0;
-  padding: 0;
 }
 
 body {
@@ -89,4 +109,5 @@ input[type="submit"]{
   color: $color-pink-light;
   font-family: "acuta",Georgia,Times,Serif;
   font-weight: 700;
+  cursor: pointer;
 }
