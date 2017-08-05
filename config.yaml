@@ -1,10 +1,13 @@
 baseURL: "https://vijayabharathib.github.io/beehive_hugo_theme/"
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Beehive Hugo Theme"
 theme: "beehive"
 publishDir: "docs"
 canonifyURLs: true
 paginate: 2
+params:
+  description: "Lean hugo theme for easy publishing"
+  subtitle: "Lean hugo theme for easy publishing"
 author:
   vijayabharathib:
     firstname: "Vijayabharathi"

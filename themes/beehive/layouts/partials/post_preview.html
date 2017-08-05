@@ -4,13 +4,14 @@
   </a>
   <ul class="c-post-meta">
     {{ range (where .Site.Pages ".Params.id" .Params.author )}}
-      <li class="c-meta-author">
+      <!--li class="c-meta-author">
         <a href="{{ .URL }}">{{ print .Params.firstname " " .Params.lastname }}</a>
-      </li>
+      </li -->
     {{ end }}
-    <li clsss="c-meta-date"> {{ .PublishDate.Format "January 2, 2006" }} </li>
-    <li class="c-meta-length"> {{ .ReadingTime }} minute read ({{ .FuzzyWordCount}} words) </li>
+    <li clsss="c-meta-publishdate"> {{ .PublishDate.Format "January 2, 2006" }} </li>
+    <li class="c-meta-length"> {{ .ReadingTime }} minute read </li>
     <li class="c-meta-tags">
+      <span>Tags: </span>
       <ul class="c-tag-list" role="list">
         {{ range .Params.tags }}
           <li>
@@ -23,8 +24,9 @@
     </li>
   </ul>
   {{ if .Params.subtitle }}
-    <h3 class="c-post-subtitle">
+    <p class="c-post-subtitle">
       {{- .Params.subtitle -}}
-    </h3>
+    </p>
   {{ end }}
+  <a class="c-post-show-more" href="{{ .Permalink }}">Show me more...</a>
 </article>
