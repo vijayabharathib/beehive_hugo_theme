@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on My New Hugo Site</title>
+    <title>Hugo on Beehive Hugo Theme</title>
     <link>https://vijayabharathib.github.io/beehive_hugo_theme/tags/hugo/</link>
-    <description>Recent content in Hugo on My New Hugo Site</description>
+    <description>Recent content in Hugo on Beehive Hugo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Jun 2017 22:13:15 +0530</lastBuildDate>
