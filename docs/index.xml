@@ -6,10 +6,19 @@
     <description>Recent content on Beehive Hugo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Jun 2017 22:13:15 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 07 Jul 2017 10:16:59 +0530</lastBuildDate>
     
 	<atom:link href="https://vijayabharathib.github.io/beehive_hugo_theme/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>datetime format javascript</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/datetime-format-javascript/</link>
+      <pubDate>Fri, 07 Jul 2017 10:16:59 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/datetime-format-javascript/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About</title>

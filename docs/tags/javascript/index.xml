@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Beehive Hugo Theme</title>
+    <link>https://vijayabharathib.github.io/beehive_hugo_theme/tags/javascript/</link>
+    <description>Recent content in Javascript on Beehive Hugo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jul 2017 10:16:59 +0530</lastBuildDate>
+    
+	<atom:link href="https://vijayabharathib.github.io/beehive_hugo_theme/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>datetime format javascript</title>
+      <link>https://vijayabharathib.github.io/beehive_hugo_theme/post/datetime-format-javascript/</link>
+      <pubDate>Fri, 07 Jul 2017 10:16:59 +0530</pubDate>
+      
+      <guid>https://vijayabharathib.github.io/beehive_hugo_theme/post/datetime-format-javascript/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
