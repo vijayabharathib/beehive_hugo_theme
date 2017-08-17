@@ -5,7 +5,6 @@ theme: "beehive"
 publishDir: "docs"
 canonifyURLs: true
 paginate: 2
-googleAnalytics: "UA-80881928-2"
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"
