@@ -85,13 +85,26 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word; }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .site-grid {
-    display: grid; } }
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header header" "main aside" "footer aside"; } }
 .site-main {
-  max-width: 38em;
   margin: 0 auto;
-  padding: 5px; }
+  max-width: 38em;
+  padding: 5px;
+  grid-area: main; }
+
+.site-header {
+  grid-area: header; }
+
+.site-bar {
+  grid-area: aside; }
+
+.site-footer {
+  grid-area: footer; }
 
 .site-header {
   border-bottom: 5px solid #c04;
@@ -235,8 +248,7 @@ a.c-nav-link {
     cursor: default; }
 
 .side-bar {
-  padding: 10px;
-  border-top: 0.5em solid #c04; }
+  padding: 10px; }
 
 .site-footer {
   border-top: 0.5em solid #c04;
