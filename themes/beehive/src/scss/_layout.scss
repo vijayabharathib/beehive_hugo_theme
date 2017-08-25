@@ -1,3 +1,9 @@
+@media (min-width:40em) {
+  .site-grid {
+    display: grid;
+  }
+}
+
 .site-main {
   max-width: 38em;
   margin: 0 auto;

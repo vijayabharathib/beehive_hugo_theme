@@ -5,6 +5,7 @@ lastname = "Balasubramanian"
 shortbio = "Hugo is addictive"
 id="vijayabharathib"
 image="/img/authors/vb.jpeg"
+image_alt="author vijayabharathi"
 +++
 
 Here to stay, until hugo is up and running.
