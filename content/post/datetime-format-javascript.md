@@ -6,4 +6,7 @@ subtitle = "Why formatting date and time takes so many search runs and how to do
 tags = ["javascript"]
 title = "datetime format javascript"
 draft=false
+image = "/img/newlogo.png"
+image_alt="pineboat logo"
+image_credit=""
 +++
