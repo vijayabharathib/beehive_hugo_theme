@@ -8,6 +8,7 @@ paginate: 2
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"
+
 author:
   vijayabharathib:
     firstname: "Vijayabharathi"
