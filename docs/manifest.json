@@ -2,19 +2,25 @@
     "name": "BeeHive",
     "short_name": "BH",
     "description": "Beehive - a minimalist PWA theme",
+    "start_url": ".",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/android-chrome-192x192.png?v=dLmn4p7mYj",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-256x256.png",
+            "src": "/android-chrome-256x256.png?v=dLmn4p7mYj",
             "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png?v=dLmn4p7mYj",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#cc0044",
-    "background_color": "#222233",
+    "theme_color": "#ffffff",
+    "background_color": "#fffff",
     "display": "standalone"
 }
