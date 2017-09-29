@@ -10,3 +10,19 @@ image = "/img/newlogo.png"
 image_alt="pineboat logo"
 image_credit=""
 +++
+
+Code sample
+
+```js
+
+/ab/.test("new");
+function newF(){
+  var x=0;
+  for(var i=0;i<x;i++){
+    console.log(i+x);
+  }
+}
+
+```
+
+does that look ok?

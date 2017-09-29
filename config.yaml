@@ -5,6 +5,19 @@ theme: "beehive"
 publishDir: "docs"
 canonifyURLs: true
 paginate: 2
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+menu:
+  main:
+      - Name: "about"
+        Identifier: "about"
+        URL: "/page/about/"
+        weight: 220
+      - Name: "privacy"
+        Identifier: "privacy"
+        URL: "/page/privacy/"
+        weight: 110
+
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"
