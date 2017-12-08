@@ -1,4 +1,4 @@
-#baseURL: "https://vijayabharathib.github.io/beehive_hugo_theme/"
+baseURL: "https://beehive.netlify.com/"
 languageCode: "en-us"
 title: "Beehive Hugo Theme"
 theme: "beehive"
