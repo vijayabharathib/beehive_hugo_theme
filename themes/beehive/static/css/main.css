@@ -12,6 +12,8 @@ html {
   font-size: 18px; }
 
 @media (min-width: 40em) {
+  body {
+    border-top: 10px solid #c04; }
   h1 {
     font-size: 2.5em;
     line-height: 1.2em; }
@@ -59,8 +61,7 @@ ul {
 
 body {
   margin: 0;
-  border: 0;
-  border-top: 10px solid #c04; }
+  border: 0; }
 
 input:not([type=submit]):not([type=file]) {
   width: 100%;
