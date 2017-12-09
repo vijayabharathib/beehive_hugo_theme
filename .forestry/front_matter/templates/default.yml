@@ -1,0 +1,56 @@
+---
+hide_body: false
+fields:
+- name: draft
+  label: Draft
+  type: boolean
+  hidden: false
+  default: true
+- name: author
+  label: Author
+  type: text
+  hidden: false
+  default: vijayabharathib
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: Bold title
+- name: subtitle
+  label: Subtitle
+  type: text
+  hidden: false
+  default: Byline to go along
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: 2107-11-12 08:15:59 +0530
+- name: publishdate
+  label: Publishdate
+  type: datetime
+  hidden: false
+  default: 2107-11-12 08:15:59 +0530
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default:
+  - major
+  - minor
+  - classify
+- name: image
+  label: Image
+  type: file
+  hidden: false
+  default: "/img/newlogo.png"
+- name: image_alt
+  label: Image alt
+  type: text
+  hidden: false
+  default: important message about image
+- name: image_credit
+  label: Image credit
+  type: text
+  hidden: false
+  default: credit the image owner
