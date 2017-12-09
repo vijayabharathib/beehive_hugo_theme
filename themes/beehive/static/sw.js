@@ -1,5 +1,5 @@
 importScripts("js/cache-polyfill.js");
-var CACHE_KEY='beehive_v11';
+var CACHE_KEY='beehive_v12';
 
 //This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
