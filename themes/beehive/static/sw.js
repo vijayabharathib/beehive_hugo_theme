@@ -1,11 +1,10 @@
 importScripts("js/cache-polyfill.js");
-var CACHE_KEY='beehive_v17';
+var CACHE_KEY='beehive_v20';
 let files_to_preload=[
   '/',
   '/offline/',
-  'img/site_logo.svg',
-  'css/main.css'];
-
+  '/img/site_logo.svg',
+  '/css/main.css'];
 self.addEventListener('install', function(event) {
   event.waitUntil(preLoad());
 });
@@ -17,21 +16,27 @@ var preLoad = function(){
 }
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(returnFromCache(event.request.clone()));
+  const request=event.request;
+  const url=new URL(request.url);
+  if (request.method != "GET") return;
+  let networkResponse=fromNetwork(request.clone());
+  event.waitUntil(networkResponse);
+  let response=fromCache(request).catch(()=>{
+    return networkResponse;
+  });
+  event.respondWith(response);
 });
 
-var returnFromCache = function(request){
+var fromCache = function(request){
   let url=new URL(request.url);
   return caches.open(CACHE_KEY).then(function (cache) {
     return cache.match(request).then(function (matching) {
       if(!matching || matching.status == 404) {
-        throw Error("no-cache-match");
+        throw Error("No cache match for ",url.href);
       } else {
         return matching
       }
     })
-  }).catch(err=>{
-    return fromNetwork(request);
   });
 };
 
@@ -43,10 +48,10 @@ var offlineContent= function(request){
 
 var fromNetwork = function(request){
   let url=new URL(request.url);
-  return fetch(request.clone()).then(function (response) {
+  return fetch(request).then(function (response) {
       const chain = Promise.resolve(response.clone());
       caches.open(CACHE_KEY).then(function (cache) {
-        cache.put(request, response.clone());
+        cache.put(request, response);
       });
       return chain;
     }).catch(err=>{
