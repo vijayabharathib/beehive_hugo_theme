@@ -6,7 +6,8 @@
     "devDependencies": {
         "node-sass": "^4.1.1",
         "node-sass-import": "^1.1.1",
-        "npm-watch": "^0.1.7"
+        "npm-watch": "^0.1.7",
+        "testcafe": "^0.18.5"
     },
     "watch": {
         "style": {
@@ -19,6 +20,7 @@
     },
     "scripts": {
         "style": "node-sass -r themes/beehive/src/scss -o themes/beehive/static/css --importer node_modules/node-sass-import",
-        "watch": "npm-watch"
+        "watch": "npm-watch",
+        "test": "testcafe chrome test/sw_test.js"
     }
 }
