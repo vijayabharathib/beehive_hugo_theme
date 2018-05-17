@@ -18,7 +18,20 @@ menu:
         Identifier: "privacy"
         URL: "/page/privacy/"
         weight: 110
-
+categories: [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Service Workers",
+  "Progressive Web App",
+  "React",
+  "Test Automation",
+  "Web Design",
+  "Responsive Design",
+  "DevOps",
+  "Rails",
+  "Docker"
+]
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"

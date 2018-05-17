@@ -9,6 +9,7 @@ draft=false
 image = "/img/newlogo.png"
 image_alt="pineboat logo"
 image_credit=""
+categories=["Javascript"]
 +++
 
 Code sample
@@ -23,4 +24,4 @@ function newF(){
   }
 
 ```
-does that look ok?
+does that look ok? here is one `inline`. 

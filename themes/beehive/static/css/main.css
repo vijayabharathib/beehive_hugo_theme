@@ -24,7 +24,8 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, Times, serif;
-  font-weight: 700; }
+  font-weight: 700;
+  color: #bbc; }
 
 h1 {
   font-size: 2em; }
@@ -41,14 +42,14 @@ h4 {
   margin: 2em 0 1em 1em; }
 
 a, a h1, a h2, a h3, a h4, a h6, a h5 {
-  color: #adf;
+  color: #cf9;
   text-decoration: none; }
 
 a:visited, a:visited h1, a:visited h2, a:visited h3, a:visited h4, a:visited h6, h5 a:visited {
   color: #fc6; }
 
 a:hover, a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, h6 a:hover {
-  color: #cf9;
+  color: #adf;
   text-decoration: underline;
   cursor: pointer; }
 
@@ -145,9 +146,9 @@ pre {
   15% {
     transform: rotate(-5deg) translate(-3px, 5px); }
   20% {
-    transoform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    transoform: rotate(0deg); } }
+    transform: rotate(0deg); } }
 
 a.c-logo-link {
   display: block;
@@ -317,8 +318,12 @@ pre, .footer_card {
 
 /* Background */
 .chroma {
-  color: #f8f8f2;
-  background-color: #272822; }
+  background-color: #334; }
+
+code {
+  background-color: #334;
+  padding-left: 2px;
+  padding-right: 2px; }
 
 /* Error */
 .chroma .err {
