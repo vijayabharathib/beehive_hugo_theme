@@ -19,9 +19,9 @@ Code sample
 function newF(){
   var x=0;
   for(var i=0;i<x;i++){
-  console.log(i+x);
+    console.log(i+x,"and a pretty long string");
   }
-  }
+}
 
 ```
 does that look ok? here is one `inline`. 

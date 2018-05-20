@@ -3,7 +3,7 @@ FROM starefossen/ruby-node:2-8-slim
 # Download and install hugo
 RUN apt-get -qq update \
     && apt-get -qq install wget
-ENV HUGO_VERSION 0.31.1
+ENV HUGO_VERSION 0.40.3
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
 RUN wget -P /tmp/ https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} 
 RUN dpkg -i /tmp/${HUGO_BINARY} \
@@ -12,7 +12,7 @@ RUN dpkg -i /tmp/${HUGO_BINARY} \
 # Create working directory
 RUN mkdir /usr/share/blog
 WORKDIR /usr/share/blog
-COPY package.json /usr/share/blog
+COPY package.json yarn.lock /usr/share/blog/
 RUN yarn install 
 COPY . /usr/share/blog
 # Expose default hugo port

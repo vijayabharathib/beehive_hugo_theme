@@ -8,7 +8,7 @@ title = "beehive theme hugo lessons"
 image = "new_logo.png"
 +++
 
-```
+```go
 {{ if ne .Paginator.First.PageNumber .Paginator.PageNumber }}
   <li class="first active">
     <a href="{{ .URL }}page/{{ .Paginator.First.PageNumber }}">First

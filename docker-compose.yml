@@ -4,8 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: hugo server --disableLiveReload -wvFD --bind=0.0.0.0
+    command: hugo server -wvFD --bind=0.0.0.0
     volumes:
       - .:/usr/share/blog
+      - /usr/share/blog/node_modules
     ports:
       - "1313:1313"
