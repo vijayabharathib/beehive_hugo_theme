@@ -3,7 +3,6 @@
 (function(){
     let retention=0;
     let data={visit:{
-        url: window.location.origin + window.location.pathname,
         referer: document.referrer        
     }};
     let options={
@@ -12,6 +11,7 @@
             'content-type':'application/json'
         }
     };
+    let baseUrl={{- $.Site.Params.analytics -}};
     function postVisit(url,data,options){
         data.visit.retention=retention;
         retention+=10;
@@ -21,12 +21,13 @@
             .then(response=>response.json())
             .then(json=>{
                 console.log(json);
-                // data.visit.id=json.id;
-                // options.method='put';
-                // setTimeout(postVisit,10000,url,data,options);
+                data.visit.id=json.id;
+                options.method='put';
+                url=baseUrl+"/"+json.id;
+                setTimeout(postVisit,20000,url,data,options);
             }).catch(e=>console.log(e));
     }
-    postVisit({{- $.Site.Params.analytics -}},data,options);
+    postVisit(baseUrl,data,options);
 })();
 </script>
 {{ end }}

@@ -35,8 +35,8 @@ categories: [
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"
-  analytics: "https://unarstaged.herokuapp.com/visits"
-  
+  analytics: "http://localhost:3000/visits"
+
 author:
   vijayabharathib:
     firstname: "Vijayabharathi"
