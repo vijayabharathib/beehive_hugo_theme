@@ -14,7 +14,7 @@
     console.log(baseUrl);
     function postVisit(url,data,options){
         data.visit.retention=retention;
-        retention+=10;
+        retention+=20;
         options.body=JSON.stringify(data);
 
         fetch(url,options)
