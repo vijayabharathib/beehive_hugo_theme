@@ -2,9 +2,9 @@ FROM starefossen/ruby-node:2-8-slim
 # Forked from https://github.com/publysher/docker-hugo
 # Download and install hugo
 RUN apt-get -qq update \
-    && apt-get -qq install wget
-ENV HUGO_VERSION 0.40.3
-ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
+    && apt-get -qq install wget libstdc++6
+ENV HUGO_VERSION 0.47
+ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 RUN wget -P /tmp/ https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} 
 RUN dpkg -i /tmp/${HUGO_BINARY} \
     && rm /tmp/${HUGO_BINARY}

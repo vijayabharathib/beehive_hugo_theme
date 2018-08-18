@@ -7,7 +7,9 @@
         "node-sass": "^4.1.1",
         "node-sass-import": "^1.1.1",
         "npm-watch": "^0.1.7",
-        "testcafe": "^0.18.5"
+        "testcafe": "^0.18.5",
+        "postcss-cli": "~6.0.0",
+        "autoprefixer": "~9.1.1"
     },
     "watch": {
         "style": {
