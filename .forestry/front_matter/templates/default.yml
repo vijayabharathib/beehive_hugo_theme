@@ -1,5 +1,7 @@
 ---
+label: default
 hide_body: false
+is_partial: false
 fields:
 - name: draft
   label: Draft
@@ -25,12 +27,12 @@ fields:
   label: Date
   type: datetime
   hidden: false
-  default: 2107-11-12 08:15:59 +0530
+  default: 2107-11-12 02:45:59 +0000
 - name: publishdate
   label: Publishdate
   type: datetime
   hidden: false
-  default: 2107-11-12 08:15:59 +0530
+  default: 2107-11-12 02:45:59 +0000
 - name: tags
   label: Tags
   type: tag_list
@@ -54,3 +56,5 @@ fields:
   type: text
   hidden: false
   default: credit the image owner
+pages:
+- content/post/forestry-post-1.md
