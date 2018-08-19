@@ -7,7 +7,7 @@
   {{ if .Site.IsServer }}
   {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
   {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
   {{ else }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
     {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | minify | fingerprint }}
