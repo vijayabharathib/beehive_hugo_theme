@@ -1,21 +1,13 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/spf13/hugoThemes#themetoml for an example
-
 name = "Beehive"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
-tags = []
-features = []
-min_version = "0.21"
+licenselink = "https://github.com/vijayabharathib/beehive_hugo_theme/blob/master/LICENSE.md"
+description = "Dark blog theme extracted from pineboat.in"
+homepage = "http://beehive.netlify.com/"
+tags = ["blog","PWA"]
+features = ["Offline content","Progressive Web App"]
+min_version = "0.47"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Vijayabharathi"
+  homepage = "https://www.vijayabharathi.in"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
