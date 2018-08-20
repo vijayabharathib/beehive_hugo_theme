@@ -10,12 +10,15 @@
 html {
   font-family: $font-family-body-system;
   height: 100%;
-  background-color: $color-violet-dark;
+  background-color: #112;
   color: $color-text;
   font-size: 18px;
   font-size: calc(18px + .2vw);
 }
 
+body {
+  margin: 0;
+}
 @media (min-width: 40em) {
   body{
     border-top: 10px solid $color-pink-light;
