@@ -2,8 +2,6 @@
   ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
@@ -14,5 +12,4 @@
 .sharing__link {
   padding: 5px 10px;
   display: inline-block;
-  min-width: 20em;
 }
