@@ -6,7 +6,7 @@
 }
 
 
-@media (min-width: 1280px) {
+@media (min-width: $break-point-large) {
   .site-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;

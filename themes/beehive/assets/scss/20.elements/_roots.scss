@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+
+  &::selection {
+    background-color: $color-red-light;
+    color: $color-teal-dark;
+  }
+}
+
+html {
+  font-family: $font-family-body-system;
+  height: 100%;
+  background-color: #112;
+  color: $color-text;
+  font-size: 18px;
+  font-size: calc(18px + .2vw);
+}
+

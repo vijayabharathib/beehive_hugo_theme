@@ -1,0 +1,16 @@
+.c-btn {
+    &#{&} {
+        display: inline-block;
+        border: 5px double $color-link;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: $color-link;
+    }
+    &#{&}:hover {
+        border: 5px solid;
+        text-decoration: none;
+    }
+    &#{&}:focus {
+        border: 5px dotted $color-link-visited;
+    }
+}

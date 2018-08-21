@@ -1,7 +1,8 @@
 .o-post-preview {
-  padding-bottom: 10px;
   border-bottom: 5px solid $color-teal-light;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c-post-title {
@@ -33,7 +34,7 @@
   color: transparentize($color-teal-light, .3);
 }
 
-@media (min-width: 40em){
+@media (min-width: $break-point-large){
   .c-meta-author,
   .c-meta-length,
   .c-meta-date {
@@ -61,10 +62,8 @@
   margin-top: 50px;
 }
 
-.c-post-show-more {
-  margin-left: auto;
-  width: 100%;
-  text-align: right;
-  display: inline-block;
-  margin-top: 50px;
+.c-post-show-more{
+  &#{&} {
+    margin:50px auto 10px 5%;
+  }
 }

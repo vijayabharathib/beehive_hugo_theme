@@ -1,0 +1,29 @@
+input:not([type=submit]):not([type=file]) {
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: large;
+  border: none;
+  margin-top: 5px;
+  background: #ddd;
+}
+
+input[type="submit"]{
+  border: none;
+  font-size: 120%;
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 20px;
+  color: $color-teal-dark;
+  font-family: Georgia,Times,Serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #111;
+  background: $color-blue-light;
+  transition: all 300ms ease;
+  &:hover {
+    box-shadow: 1px 1px 1px #000;
+    text-decoration: underline;
+  }
+}

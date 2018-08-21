@@ -21,27 +21,6 @@
 }
 
 
-@keyframes surf {
-  0% {
-    transform: rotate(0deg);
-  }
-  5% {
-    transform: rotate(-5deg) translate(-5px,-5px);
-  }
-  10% {
-    transform: rotate(7deg) translate(5px,-5px);
-  }
-  15% {
-    transform: rotate(-5deg) translate(-3px,5px);
-  }
-  20% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 a.c-logo-link {
   display: block;
   margin: 10px auto;

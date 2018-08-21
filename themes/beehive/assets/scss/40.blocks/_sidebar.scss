@@ -10,7 +10,7 @@
 
 #sidebar-share{
   display: none;
-  @media (min-width: 1280px) { 
+  @media (min-width: $break-point-large) { 
     display: block;   
     position: sticky;
     top: 0;

@@ -1,0 +1,26 @@
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-body-system;
+  font-weight: normal;
+  word-wrap: break-word;
+  letter-spacing: -0.02em;
+  color: $color-headline;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-style: italic;
+  margin: 2em 0 1em 1em;
+}
