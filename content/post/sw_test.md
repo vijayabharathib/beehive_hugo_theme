@@ -1,7 +1,7 @@
 ---
 author: "vijayabharathib"
 title: "Bold Title, Better Keep it Multiline To See How Long It Can Handle"
-subtitle: "Byline to go along"
+subtitle: "Byline to go along, but to make it realistic, it has to be close to 200 characters so that it fills up the space given by framework and still works well within the UI"
 date: "2018-08-11T08:15:59+05:30"
 publishdate: "2018-08-11T08:15:59+05:30"
 tags: ["major","minor","classify"]
