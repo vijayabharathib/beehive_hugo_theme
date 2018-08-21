@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "homepage": "https://github.com/vijayabharathib/beehive_hugo_theme",
-    "dependencies": {
+    "disabled_dependencies": {
         "postcss-cli": "~6.0.0",
         "autoprefixer": "~9.1.1"
     },
