@@ -2,12 +2,15 @@
 @import "10.settings/fonts";
 @import "10.settings/breakpoints";
 @import "10.settings/animations";
+@import "15.resets/reset";
 @import "20.elements/headings";
 @import "20.elements/inputs";
 @import "20.elements/links";
 @import "20.elements/paragraphs";
 @import "20.elements/roots";
 @import "30.components/buttons";
+@import "30.components/link_list";
+@import "30.components/tags";
 @import "40.blocks/header";
 @import "40.blocks/post_list";
 @import "40.blocks/post";

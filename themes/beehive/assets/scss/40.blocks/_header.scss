@@ -36,20 +36,20 @@ a.c-logo-link {
   animation: surf 120s infinite alternate ease-in-out;
 }
 
+.site-title { &#{&}{
+  font-size: 2em;
+  font-size: calc(2em + .02vw);
+  margin: 0;
+  color: $color-headline;
+  }
+  &#{&}:hover {
+    letter-spacing: -0.03em;
+  }
+}
+
 .o-site-nav {
-  margin: 10px 5px;
+  margin: 1em .5em;
   a {
     padding: 10px;
   }
-}
-
-ul.c-nav-links {
-  padding: 0;
-  li {
-    display: inline-block;
-  }
-}
-
-a.c-nav-link {
-  display: inline-block;
 }

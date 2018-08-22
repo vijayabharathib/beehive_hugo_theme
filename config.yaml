@@ -9,12 +9,13 @@ pygmentsUseClasses: true
 pygmentsUseClassic: true
 menu:
   main:
+      - Name: "Home"
+        URL: "/"
+        weight: 101
       - Name: "about"
-        Identifier: "about"
         URL: "/page/about/"
         weight: 220
       - Name: "privacy"
-        Identifier: "privacy"
         URL: "/page/privacy/"
         weight: 110
 categories: [

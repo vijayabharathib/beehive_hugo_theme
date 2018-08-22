@@ -9,13 +9,17 @@
     <li class="c-meta-length"> {{ .ReadingTime }} minute read </li>
     <li class="c-meta-tags">
       <span>Tags: </span>
-      <ul class="c-tag-list" role="list">
-        {{ range .Params.tags }}
+      <ul class="c-flat-list" role="list">
+        {{ $len := (len .Params.tags) }}
+        {{ range $index, $tag := .Params.tags }}
           <li>
-            <a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">
-              {{ . }}
+            <a href="{{ $.Site.LanguagePrefix }}/tags/{{ $tag | urlize }}">
+              {{ $tag }}
             </a>
           </li>
+          {{ if ne (add $index 1) $len }}
+            <li class="c-separator">|</li>
+          {{ end }}
         {{ end }}
       </ul>
     </li>
