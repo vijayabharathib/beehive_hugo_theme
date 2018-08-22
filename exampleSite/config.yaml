@@ -2,7 +2,7 @@ baseURL: "https://beehive.netlify.com/"
 languageCode: "en-us"
 title: "Beehive Hugo Theme"
 theme: "beehive"
-publishDir: "docs"
+themesDir: "../.."
 paginate: 2
 pygmentsCodeFences: true
 pygmentsUseClasses: true
