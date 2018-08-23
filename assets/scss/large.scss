@@ -3,6 +3,8 @@
 @import "10.settings/fonts";
 @import "10.settings/breakpoints";
 @import "10.settings/animations";
+@import "10.settings/media.mixin";
+$media-queries: true;
 
 /* Reset problematic defaults */ 
 @import "15.resets/reset";

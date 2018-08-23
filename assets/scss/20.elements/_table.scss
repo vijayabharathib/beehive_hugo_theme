@@ -1,0 +1,15 @@
+
+table { border-collapse: collapse; }
+  
+th { padding: 10px;}
+
+thead { border-top: solid thin grey; }
+
+tr { border-bottom: solid thin grey; }
+
+td { padding: 5px ; }
+
+td:not(:last-child),th:not(:last-child) {
+border-right: solid thin grey;
+}
+  
