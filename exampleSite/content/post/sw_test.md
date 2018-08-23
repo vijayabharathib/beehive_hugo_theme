@@ -28,7 +28,23 @@ Because of the very simple syntax of go templates, the pipe is essential to bein
 
 A few simple examples should help convey how to use the pipe.
 
+A list for flavor:
 
+* No sequence 
+* Some queue
+* Blank page
+
+A numbered list
+
+1. One file
+2. Two themes
+3. Three Progressive Web Apps with Reliable, Fast and Progressive enhancements.
+4. And another long line of text that may be running for multiple lines again
+5. Another small line
+
+A code that will be very long `starting from here until the end of the earth and back home until eternity`. 
+
+Or this `input:not([type=radio]).not(.required)` on mobile.
 Code sample
 ```js
  
@@ -36,7 +52,18 @@ Code sample
 function newF(){
   var x=0;
   for(var i=0;i<x;i++){
-    console.log(i+x);
+    console.log(i+x, "printing secret", "long text");
   }
 }
 ```
+
+Finally, a table:
+
+Header Value 1 | Header Value 2
+-----|-----
+`some code` | and its description from the deep shadows of internet that no one has ever seen.
+`another term` | that everyone dreads using on their own computer but uses it across the board anyways
+`what if the command itself is too long` | while the description is short.
+
+Finally an image:
+![Image Alt Text to tell screen readers some message]( /img/post_hero.png)
