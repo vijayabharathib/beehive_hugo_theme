@@ -6,7 +6,7 @@
 }
 
 
-@media (min-width: $break-point-large) {
+@include respond-to($break-point-large) {
   .site-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
