@@ -40,16 +40,10 @@ a.c-logo-link {
   font-size: 2em;
   font-size: calc(2em + .02vw);
   margin: 0;
-  color: $color-headline;
-  }
-  &#{&}:hover {
-    letter-spacing: -0.03em;
   }
 }
 
 .o-site-nav {
-  margin: 1em .5em;
-  a {
-    padding: 10px;
-  }
+  margin-bottom: 1em;
+  width: 100%;
 }

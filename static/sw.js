@@ -1,10 +1,9 @@
 importScripts("js/cache-polyfill.js");
-var CACHE_KEY='beehive_v31';
+var CACHE_KEY='beehive_v32';
 let files_to_preload=[
   '/',
   '/offline/',
-  '/img/site_logo.svg',
-  '/css/main.css'];
+  '/img/site_logo.svg'];
 self.addEventListener('install', function(event) {
   event.waitUntil(preLoad());
 });
