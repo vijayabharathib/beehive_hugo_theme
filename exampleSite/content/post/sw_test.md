@@ -26,6 +26,7 @@ Borrowed from unix pipes, the concept is simple, each pipeline's output becomes 
 
 Because of the very simple syntax of go templates, the pipe is essential to being able to chain together function calls. One limitation of the pipes is that they only can work with a single value and that value becomes the last parameter of the next pipeline.
 
+Introducing links [in between a big paragraph](/may/ "Added title for interesting leads") can also be a styling issue as it needs enough contrast away from the surrounding text to be able to stand out of the crowd and pull the readers attention. While it is [good to have visited links styled separately to show someone already visited a URL](/may "not mandatory though"). 
 A few simple examples should help convey how to use the pipe.
 
 A list for flavor:

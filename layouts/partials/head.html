@@ -5,20 +5,14 @@
   <!-- Links and stylesheets -->
   <!--link rel="stylesheet" href="/css/main.css" /-->
   {{ if .Site.IsServer }}
-    {{ $cssOpts := (dict "targetPath" "styles/default-no-mq.css" "enableSourceMap" true ) }}
-    {{ $styles := resources.Get "scss/default-no-mq.scss" | toCSS $cssOpts | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen and (max-width: 1279px)">
     {{ $cssOpts2 := (dict "targetPath" "styles/default.css" "enableSourceMap" true ) }}
     {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen and (min-width: 1280px)">
+    <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen">
 
   {{ else }}
-    {{ $cssOpts := (dict "targetPath" "styles/default-no-mq.css" ) }}
-    {{ $styles := resources.Get "scss/default-no-mq.scss" | toCSS $cssOpts | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen and (max-width: 1279px)">
     {{ $cssOpts2 := (dict "targetPath" "styles/default.css" ) }}
     {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen and (min-width: 1280px)">
+    <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen">
   {{ end }}
   <!-- end of style sheets -->
   <link rel="canonical" href="{{ .URL | absLangURL }}" />

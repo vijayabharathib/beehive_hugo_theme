@@ -1,18 +1,18 @@
 a {
-  &, h1,h2,h3,h4,h6,h5 {
+  & { //, h1,h2,h3,h4,h6,h5 {
     color: $color-link;
-    text-decoration: none;
+    text-decoration: underline;
   }
-  &:visited {
-    &, h1,h2,h3,h4,h6,h5 & {
-      color: $color-link-visited;
-    }
-  }
+  // &:visited {
+  //   &, h1,h2,h3,h4,h6,h5 & {
+  //     color: $color-link-visited;
+  //   }
+  // }
   &:hover{
-    &, h1,h2,h3,h4,h5,h6 & {
+    & { //, h1,h2,h3,h4,h5,h6 & {
       //border-bottom: 1px solid $color-yellow-light;
-      color: $color-link-hover;
-      text-decoration: underline;
+      //color: $color-link-hover;
+      text-decoration: none;
       cursor: pointer;
     }
   }

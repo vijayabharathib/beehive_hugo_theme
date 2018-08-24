@@ -14,5 +14,8 @@ html {
   color: $color-text;
   font-size: 18px;
   font-size: calc(18px + .2vw);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  word-spacing: .1em;
 }
 
