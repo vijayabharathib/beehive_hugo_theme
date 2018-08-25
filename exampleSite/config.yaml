@@ -6,7 +6,7 @@ themesDir: "../.."
 paginate: 2
 pygmentsCodeFences: true
 pygmentsUseClasses: true
-pygmentsUseClassic: true
+pygmentsUseClassic: false
 canonifyUrls: false
 
 menu:
