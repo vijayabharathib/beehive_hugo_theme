@@ -14,11 +14,11 @@ menu:
       - Name: "Home"
         URL: "/"
         weight: 101
-      - Name: "about"
+      - Name: "About"
         URL: "/page/about/"
         weight: 220
-      - Name: "privacy"
-        URL: "/page/privacy/"
+      - Name: "JavaScript"
+        URL: "/tag/javascript/"
         weight: 110
 categories: [
   "HTML",
