@@ -13,6 +13,6 @@
   @include respond-to($break-point-large) { 
     display: block;   
     position: sticky;
-    top: 0;
+    top: 80px;
   }
 }

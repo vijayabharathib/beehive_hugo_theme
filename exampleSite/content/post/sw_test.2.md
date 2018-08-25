@@ -1,10 +1,10 @@
 ---
 author: "vijayabharathib"
-title: "First Bold Title, Better Keep it Multiline To See How Long It Can Handle"
+title: "Third Bold Title, Better Keep it Multiline To See How Long It Can Handle"
 subtitle: "Byline to go along, but to make it realistic, it has to be close to 200 characters so that it fills up the space given by framework and still works well within the UI"
-date: "2018-06-11T08:15:59+05:30"
-publishdate: "2018-06-11T08:15:59+05:30"
-tags: ["Major","Minor","JavaScript"]
+date: "2018-08-11T08:15:59+05:30"
+publishdate: "2018-08-11T08:15:59+05:30"
+tags: ["major","minor","classify"]
 image: "/img/post_hero.png"
 image_alt: "important message about image"
 image_credit: "credit the image owner"
@@ -50,6 +50,7 @@ A code that will be very long `starting from here until the end of the earth and
 Or this `input:not([type=radio]).not(.required)` on mobile.
 Code sample
 ```js
+ 
 /ab/.test("new");
 function newF(){
   var x=0;
