@@ -3,11 +3,19 @@
     <h1>{{ .Title }}</h1>
     {{ partial "post_meta.html" . }}
     <p class="c-post-subtitle">{{ .Params.subtitle }}</p>
-    {{ if isset .Params "image" }}
-      <div class="c-post-image">
-        <img class="c-image" alt="{{ .Params.image_alt }}" src="{{ .Params.image }}">
-        <p class="c-image-credit">{{ .Params.image_credit }}</p>
-      </div>
+    {{ if isset .Params "responsive_image" }}
+    {{ $img := .Params.responsive_image }}
+    <div class="c-post-image">
+      <img class="c-image" alt="{{ .Params.image_alt }}" src='{{- $img -}}_800.png' srcset='{{ print $img "_320.png 320w, " $img "_426.png 426w, " $img "_640.png 640w, " $img "_800.png 1280w" }}' sizes='(min-width: 1280px) 70vw, 100vw' />
+      <p class="c-image-credit">{{ .Params.image_credit }}</p>
+    </div>
+    {{ else }}
+      {{ if isset .Params "image" }}
+        <div class="c-post-image">
+          <img class="c-image" alt="{{ .Params.image_alt }}" src="{{ .Params.image }}">
+          <p class="c-image-credit">{{ .Params.image_credit }}</p>
+        </div>
+      {{ end }}
     {{ end }}
     {{ .Content }}
     <ul class="c-post-author">

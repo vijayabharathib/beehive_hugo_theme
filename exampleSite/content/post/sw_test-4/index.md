@@ -1,14 +1,23 @@
 ---
 author: "vijayabharathib"
-title: "Second Bold Title, Better Keep it Multiline To See How Long It Can Handle"
+title: "Fourth Bold Title, Better Keep it Multiline To See How Long It Can Handle"
 subtitle: "Byline to go along, but to make it realistic, it has to be close to 200 characters so that it fills up the space given by framework and still works well within the UI"
-date: "2018-07-11T08:15:59+05:30"
-publishdate: "2018-07-11T08:15:59+05:30"
-tags: ["JavaScript","WebDriver","CSS Selectors"]
+date: "2018-08-25T08:15:59+05:30"
+publishdate: "2018-08-25T08:15:59+05:30"
+tags: ["Major","Minor","JavaScript"]
 image: "/img/post_hero.png"
-image_widths: [320,640,960,1920]
+responsive_image: "/img/post_hero"
 image_alt: "important message about image"
 image_credit: "credit the image owner"
+resources: 
+- src: "images/post_hero.png"
+  name: "hero image"
+  credit: "trianglify"
+  srcset: "1000w"
+- src: "images/post_thumb.png"
+  name: "hero thumb"
+  credit: "small trianglify"
+  srcset: "2000w"
 ---
 
 
@@ -23,6 +32,8 @@ Because of the very simple syntax of go templates, the pipe is essential to bein
 How about *something in italics, does that give enough contract?* or you need to go for a **bold face to make an impact** on readers attention? 
 
 A few simple examples should help convey how to use the pipe.
+
+>How can you leave a quote outside. The whole world lives off from wise old quotes from wise old men of old time wisdom.
 
 ## Head 2
 Borrowed from unix pipes, the concept is simple, each pipeline's output becomes the input of the following pipe.
@@ -51,7 +62,6 @@ A code that will be very long `starting from here until the end of the earth and
 Or this `input:not([type=radio]).not(.required)` on mobile.
 Code sample
 ```js
- 
 /ab/.test("new");
 function newF(){
   var x=0;
