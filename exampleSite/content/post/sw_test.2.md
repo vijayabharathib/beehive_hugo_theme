@@ -6,6 +6,7 @@ date: "2018-08-11T08:15:59+05:30"
 publishdate: "2018-08-11T08:15:59+05:30"
 tags: ["major","minor","classify"]
 image: "/img/post_hero.png"
+image_widths: [426,800,1280]
 image_alt: "important message about image"
 image_credit: "credit the image owner"
 ---

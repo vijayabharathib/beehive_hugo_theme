@@ -6,6 +6,7 @@ date: "2018-06-11T08:15:59+05:30"
 publishdate: "2018-06-11T08:15:59+05:30"
 tags: ["Major","Minor","JavaScript"]
 image: "/img/post_hero.png"
+image_widths: [320,426,640,800,960,1280,1920]
 image_alt: "important message about image"
 image_credit: "credit the image owner"
 ---

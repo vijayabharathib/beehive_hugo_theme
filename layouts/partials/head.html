@@ -6,12 +6,11 @@
   <!--link rel="stylesheet" href="/css/main.css" /-->
   {{ if .Site.IsServer }}
     {{ $cssOpts2 := (dict "targetPath" "styles/default.css" "enableSourceMap" true ) }}
-    {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | minify | fingerprint }}
+    {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | postCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen">
-
   {{ else }}
     {{ $cssOpts2 := (dict "targetPath" "styles/default.css" ) }}
-    {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | minify | fingerprint }}
+    {{ $styles2 := resources.Get "scss/default.scss" | toCSS $cssOpts2 | postCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen">
   {{ end }}
   <!-- end of style sheets -->
