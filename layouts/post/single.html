@@ -18,6 +18,7 @@
       {{ end }}
     {{ end }}
     {{ .Content }}
+    {{ partial "related.html" . }}
     <ul class="c-post-author">
     {{ range (where .Site.Pages ".Params.id" .Params.author ) }}
       <li> By <a href="{{ .Permalink }}">{{ print .Params.firstname " " .Params.lastname }}</a> </li>
