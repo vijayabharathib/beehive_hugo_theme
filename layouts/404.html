@@ -1,0 +1,17 @@
+{{ define "main"}}
+    <main id="main">
+      <div>
+       <h1 id="title">404 - Page cannot be found! But...</h1>
+       <p class="c-post-subtitle">Looks like you were trying to load up a page that never existed or something I deleted. Don't loose hope. You can do one of the following:</p>
+       <p>You can <a href="{{ "/" | relURL }}">start from <strong>Home</strong></a> again</p>
+       <p>You can start reading from the recent articles below: 
+        <ul class="posts-list">
+          {{ $postList := .Paginate (where .Data.Pages "Type" "post") }}
+          {{ range first 5 $postList.Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+       </p>
+      </div>
+    </main>
+{{ end }}
