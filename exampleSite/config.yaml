@@ -17,9 +17,9 @@ menu:
       - Name: "About"
         URL: "/page/about/"
         weight: 220
-      - Name: "JavaScript"
-        URL: "/tag/javascript/"
-        weight: 110
+      - Name: "Search"
+        URL: "/page/search/"
+        weight: 333
 categories: [
   "HTML",
   "CSS",
