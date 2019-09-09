@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ $data := .Data }}
   <div class="container" role="main">
+    <h1> {{ .Title }} </h1>
     <ul class="list">
       {{ range $key, $value := .Data.Terms.ByCount }}
         <li class="list-item"><a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}" >
