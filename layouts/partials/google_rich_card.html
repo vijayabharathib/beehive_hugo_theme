@@ -26,7 +26,7 @@
             "@type": "BlogPosting",
             "about": "{{- .Params.subtitle -}}",
             "wordCount": {{- .FuzzyWordCount -}},
-            "datePublished": "{{- .PublishDate -}}",
+            "datePublished": "{{- .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 MST" -}}",
             "publisher":{
                 "@type":"Organization",
                 "name":"Pineboat",
