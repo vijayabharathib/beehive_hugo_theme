@@ -5,7 +5,6 @@
             "@type":"WebSite",
             "url": "{{- $.Site.BaseURL -}}",
             "keywords": "Web Development, JavaScript, React, Rails, Git, Docker, CSS, HTML, Responsive Web Design",
-            "image": "{{- $.Site.BaseURL -}}img/site_logo.svg",            
             "author":{
                 "@type":"Person",
                 "name": "Vijayabharathi Balasubramanian"
@@ -26,7 +25,11 @@
             "@type": "BlogPosting",
             "about": "{{- .Params.subtitle -}}",
             "wordCount": {{- .FuzzyWordCount -}},
+            {{ if isset .Params "publishdate" }}
             "datePublished": "{{- .PublishDate.Format "2006-01-02 15:04" | safeHTML -}}",
+            {{ else }}
+            "datePublished": "{{- now.Format "2006-01-02 15:04" | safeHTML -}}",
+            {{ end }}
             "publisher":{
                 "@type":"Organization",
                 "name":"Pineboat",
@@ -48,6 +51,8 @@
         {{ end }}
         {{ if isset .Params "image" }}
             ,"image": "{{ .Params.image | absURL }}"
+        {{ else }}
+            ,"image": "{{- $.Site.BaseURL -}}img/site_logo.png"
         {{ end }}
 }
 </script>
