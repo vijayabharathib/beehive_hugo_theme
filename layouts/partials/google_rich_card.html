@@ -3,7 +3,7 @@
         "@context": "http://schema.org",
         {{ if .IsHome }}
             "@type":"WebSite",
-            "url": "{{- $.Site.BaseURL -}}",
+            "url": {{- $.Site.BaseURL -}},
             "keywords": "Web Development, JavaScript, React, Rails, Git, Docker, CSS, HTML, Responsive Web Design",
             "author":{
                 "@type":"Person",
@@ -13,7 +13,7 @@
         {{ else if eq .Section "author" }}
             "@type": "Person",
             {{- with .Title | default .Site.Title }}
-                "name": "{{ . }}",
+                "name": {{ . }},
             {{- end }}
             "sameAs": [
                 "https://www.linkedin.com/in/{{.Params.id}}/",
@@ -23,17 +23,17 @@
             ]
         {{ else }}
             "@type": "BlogPosting",
-            "about": "{{- .Params.subtitle -}}",
+            "about": {{- .Params.subtitle -}},
             "wordCount": {{- .FuzzyWordCount -}},
             {{ if isset .Params "publishdate" }}
-            "datePublished": "{{- .PublishDate.Format "2006-01-02 15:04" | safeHTML -}}",
+            "datePublished": {{- .PublishDate.Format "2006-01-02 15:04" -}},
             {{ else }}
-            "datePublished": "{{- now.Format "2006-01-02 15:04" | safeHTML -}}",
+            "datePublished": {{- now.Format "2006-01-02 15:04" -}},
             {{ end }}
             "publisher":{
                 "@type":"Organization",
                 "name":"Pineboat",
-                "url":"{{- $.Site.BaseURL -}}",
+                "url":{{- $.Site.BaseURL -}},
                 "logo":{
                     "@type":"ImageObject",
                     "url":"{{- $.Site.BaseURL -}}img/site_logo.png"
@@ -42,15 +42,15 @@
             "author": {
                 "@type":"Person"
                 {{ with $.Site.Data.authors.vijayabharathib }}
-                ,"name":"{{- print .firstname " " .lastname -}}"
+                ,"name":{{- print .firstname " " .lastname -}}
                 {{ end }}
             }
             {{- with .Title | default .Site.Title }}
-            ,"headline": "{{ . }}"
+            ,"headline": {{ . }}
             {{- end }}
         {{ end }}
         {{ if isset .Params "image" }}
-            ,"image": "{{ .Params.image | absURL }}"
+            ,"image": {{ .Params.image | absURL }}
         {{ else }}
             ,"image": "{{- $.Site.BaseURL -}}img/site_logo.png"
         {{ end }}
