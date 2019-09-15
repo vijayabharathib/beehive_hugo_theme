@@ -54,5 +54,9 @@
         {{ else }}
             ,"image": "{{- $.Site.BaseURL -}}img/site_logo.png"
         {{ end }}
+        ,"mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": {{ .Permalink }}
+         },
 }
 </script>
