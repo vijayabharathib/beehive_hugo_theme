@@ -20,6 +20,7 @@
             .then(response=>response.json())
             .then(json=>{
                 data.visit.id=json.id;
+                data.visit.created_at = json.created_at;
                 options.method='put';
                 url=baseUrl+"/"+json.id;
                 setTimeout(postVisit,20000,url,data,options);
