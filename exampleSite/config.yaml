@@ -37,7 +37,7 @@ categories: [
 params:
   description: "Lean hugo theme for easy publishing"
   subtitle: "Lean hugo theme for easy publishing"
-  analytics: "http://localhost:3000/visits"
+  analytics: "https://unarstaged.herokuapp.com/visits"
   algolia: 
     vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
     params = ["categories", "tags"]

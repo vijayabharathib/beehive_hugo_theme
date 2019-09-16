@@ -32,8 +32,12 @@
 {{ else }}
   <title>{{ print .Title " | " $.Site.Title " ⛵ " $.Site.Params.Subtitle }}</title>
 {{- end -}}
-{{- with  .Description | default .Params.Subtitle | default .Site.Params.Subtitle |  default .Summary }}
+{{ if (eq .Kind "taxonomy") }}
+  <meta name="description" content="Number of Articles related to {{ .Title }}">
+{{ else }}
+  {{- with  .Description | default .Params.Subtitle | default .Site.Params.Subtitle |  default .Summary }}
   <meta name="description" content="{{ . }}">
+  {{ end }}
 {{- end }}
 
 {{- partial "opengraph_card.html" . -}}
