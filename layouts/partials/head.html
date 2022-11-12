@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ $styles2.RelPermalink }}" media="screen">
   {{ end }}
   <!-- end of style sheets -->
-  <link rel="canonical" href="{{ .URL | absLangURL }}" />
+  <link rel="canonical" href="{{ .RelPermalink | absLangURL }}" />
   <link rel="alternate" href="{{ "index.xml" | absLangURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

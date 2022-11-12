@@ -2,7 +2,7 @@
   <ul class="c-post-meta">
     {{ range (where .Site.Pages ".Params.id" .Params.author )}}
       <li class="c-meta-author">
-        By <a href="{{ .URL }}">{{ print .Params.firstname " " .Params.lastname }}</a>
+        By <a href="{{ .RelPermalink }}">{{ print .Params.firstname " " .Params.lastname }}</a>
       </li>
     {{ end }}
     <li class="c-meta-date"> {{ .PublishDate.Format "January 2, 2006" }} </li>
@@ -10,16 +10,13 @@
     <li class="c-meta-tags">
       <span>Tags: </span>
       <ul class="c-flat-list" role="list">
-        {{ $len := (len .Params.tags) }}
         {{ range $index, $tag := .Params.tags }}
           <li>
             <a href="{{ $.Site.LanguagePrefix }}/tags/{{ $tag | urlize }}">
               {{ $tag }}
             </a>
           </li>
-          {{ if ne (add $index 1) $len }}
             <li aria-hidden="true" class="c-separator">|</li>
-          {{ end }}
         {{ end }}
       </ul>
     </li>

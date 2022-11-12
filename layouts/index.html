@@ -1,7 +1,7 @@
 {{ define "main"}}
   <div class="o-posts-list">
-    {{ $postList := .Paginate (where .Data.Pages "Type" "post") }}
-    {{ range $postList.Pages }}
+    {{ $postList := .Paginate (where .Site.AllPages "Kind" "page") }}
+    {{ range $postList.Pages }}      
       {{ partial "post_preview.html" . }}
     {{ end }}
   </div>

@@ -1,5 +1,5 @@
 <meta property="og:type" content="article">
-<meta property="og:url" content="{{ .URL | absLangURL }}" />
+<meta property="og:url" content="{{ .RelPermalink | absLangURL }}" />
 {{ if isset .Params "image" }}
   <meta property="og:image" content="{{ .Params.image | absURL }}">
   <meta property="og:image:alt" content="{{ .Params.image_alt }}">

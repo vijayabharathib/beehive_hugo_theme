@@ -2,7 +2,7 @@
   <ul class="c-flat-list">
     {{ if ne .Paginator.First.PageNumber .Paginator.PageNumber }}
       <li class="first">
-        <a href="{{ .URL }}page/{{ .Paginator.First.PageNumber }}">First
+        <a href="{{ .RelPermalink }}page/{{ .Paginator.First.PageNumber }}">First
         </a>
       </li>
     {{ else }}
@@ -12,7 +12,7 @@
     {{ end }}
     {{ if .Paginator.HasPrev }}
       <li class="previous">
-        <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">Previous</a>
+        <a href="{{ .RelPermalink }}page/{{ .Paginator.Prev.PageNumber }}">Previous</a>
       </li>
     {{ else }}
       <li class="previous">Previous
@@ -23,14 +23,14 @@
 
     {{ if .Paginator.HasNext }}
       <li class="next">
-        <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Next</a>
+        <a href="{{ .RelPermalink }}page/{{ .Paginator.Next.PageNumber }}">Next</a>
       </li>
     {{ else }}
       <li class="next"><!--a disabled class="inactive" href="#">{{ "Next" }}</a-->Next</li>
     {{ end }}
     {{ if ne .Paginator.Last.PageNumber .Paginator.PageNumber }}
       <li class="last">
-        <a  href="{{ .URL }}page/{{ .Paginator.Last.PageNumber }}">Last</a>
+        <a  href="{{ .RelPermalink }}page/{{ .Paginator.Last.PageNumber }}">Last</a>
       </li>
     {{ else }}
       <li class="last"><!--a disabled class="inactive" href="#">Last </a-->Last</li>
